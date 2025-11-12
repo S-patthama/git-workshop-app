@@ -1,3 +1,5 @@
+#new
+
 # Git Workshop App
 
 A small, self-contained application for learning Git fundamentals through guided exercises and example workflows. Designed for workshops, classrooms, and self-study.
