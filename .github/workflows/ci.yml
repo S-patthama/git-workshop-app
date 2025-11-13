@@ -7,13 +7,31 @@ on:
       - 'bugfix/**'
       - 'chore/**'
       - main
+
+env:
+  SERVER_IP: '127.0.0.1'
+  SERVER_PORT: '80'
+  COMPANY_NAME: 'OpenAI'
+  REPO_NAME: ${{ github.repository}}
+      
 jobs:
   job-1:
     runs-on: ubuntu-latest
+    env: 
+      COMPANY_NAME: 'NTPLC'
     steps:
+      - run: echo "Hello ${{ github.actor}}"
+      - run: echo "Repo ${{ env.REPO_NAME}}"
+      - run: echo "SERVER_IP ${{ env.SERVER_IP}}"
       - run: echo "Hello GitHub Actions!"
+      - run: echo "COMPANY_NAME ${{ env.COMPANY_NAME}}"
+
   job-2:
     runs-on: ubuntu-latest
     steps:
       - name: Build Production
         run: echo "Build job2 executed!"
+      - name: Build Production2
+        run: echo "SERVER_PORT ${{ env.SERVER_PORT}}"
+      - name: Build Production3
+        run: echo "COMPANY_NAME ${{ env.COMPANY_NAME}}"
