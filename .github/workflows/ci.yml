@@ -17,6 +17,7 @@ env:
 jobs:
   job-1:
     runs-on: ubuntu-latest
+    environment: development
     env: 
       COMPANY_NAME: 'NTPLC'
     steps:
