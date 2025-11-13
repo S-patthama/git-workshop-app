@@ -25,6 +25,8 @@ jobs:
       - run: echo "SERVER_IP ${{ env.SERVER_IP}}"
       - run: echo "Hello GitHub Actions!"
       - run: echo "COMPANY_NAME ${{ env.COMPANY_NAME}}"
+      - run: echo "public ${{ vars.API_KEY_PUB }}"
+      - run: echo "secret ${{ secrets.API_KEY_SECRET }}"
 
   job-2:
     runs-on: ubuntu-latest
@@ -35,3 +37,4 @@ jobs:
         run: echo "SERVER_PORT ${{ env.SERVER_PORT}}"
       - name: Build Production3
         run: echo "COMPANY_NAME ${{ env.COMPANY_NAME}}"
+
